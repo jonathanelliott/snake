@@ -1,12 +1,11 @@
 import time
 import os
 import sys
-import tty
+# import tty
 # from random import randint, choice, random
 import random
 from itertools import product
 import math
-#import msvcrt
 
 class Grid:
   def __init__(self, width, height):
@@ -182,13 +181,10 @@ class Game:
       # print("Speed: ", self.speed)
       # print("Distance to fruit:")
       time.sleep(self.speed)
-      # os.system("clear")
       if not self.step(e):
-        # print(self)
         break
       os.system("clear")
       i += 1
-      #self.checkChange()
 
   def test(self, n=10):
     scores = []
@@ -197,51 +193,3 @@ class Game:
       self.run(speed=0)
       scores.append(self.length)
     print(scores)
-
-  def play(self):
-    while self.active:
-      time.sleep(0.2)
-      os.system("clear")
-      self.loop()
-      
-
-  def loop(self):
-      print(self)
-      self.step(e=0.8)
-      #self.checkChange()
-
-
-  # def checkChange(self):
-  #   #if msvcrt.kbhit():
-  #   tty.setcbreak(sys.stdin)
-  #   if sys.stdin.read(1):
-  #     key = msvcrt.getch()
-  #     if key == "a":
-  #       direction = ( 0, 1)  #left
-  #     elif key == "s":
-  #       direction = ( 1, 0)  #right
-  #     elif key == "p":
-  #       direction = ( 0,-1)  #up
-  #     elif key == "l":
-  #       direction = (-1, 0)  #down
-  #     elif key == "x":
-  #       self.active = False
-
-
-# import time
-#  def clockReset():
-#    startClock = clock()
-
-#  def checkMove():
-#    if clock() - startClock > 3
-#     switch msvcrt.getch():
-#        "a": direction = ( 0, 1). #left
-#        "s": direction = ( 1, 0)  #right
-#        "p": direction = ( 0,-1). #up
-#        "l": direction = (-1, 0)  #down
-
-#Return True if a keypress is waiting to be read.
-
-#msvcrt.getch()
-# Read a keypress and return the resulting character as a byte #string. Nothing is echoed to the console. This call will #block if a keypress is not already available, but will not #wait for Enter to be pressed. If the pressed key was a #special function key, this will return '\000' or '\xe0'; the #next call will return the keycode. The Control-C keypress #cannot be read with this function.
-
