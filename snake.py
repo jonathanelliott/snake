@@ -48,7 +48,7 @@ class Cell:
       return "O"
     elif self.value > 0:
       # snake body
-      return "#"
+      return "•"
     elif self.value < 0:
       # fruit
       return "*"
